@@ -64,7 +64,6 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
 
         return [
             'yangzie.shop.some_permission' => [
@@ -81,17 +80,50 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
 
         return [
             'shop' => [
-                'label'       => 'Shop',
-                'url'         => Backend::url('yangzie/shop/mycontroller'),
+                'label'       => '杨子鳄',
+                'url'         => Backend::url('yangzie/shop/products'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['yangzie.shop.*'],
                 'order'       => 500,
+                "sideMenu" => [
+                    'categories' => [
+                        "label" => "分类管理",
+                        "description" => "查看和管理商品分类",
+                        "url" => Backend::url("yangzie.shop/categories"),
+                        "icon" => "icon-bars",
+                        "permissions" => ["yangzie.shop.categories"],
+                        "group" => "分类&产品",
+                    ],
+                    'products' => [
+                        "label" => "产品管理",
+                        "description" => "查看和管理商品",
+                        "url" => Backend::url("yangzie/shop/hhhh"),
+                        "icon" => "icon-gift",
+                        "permissions" => ["yangzie.shop.products"],
+                        "group" => "分类&产品",
+                    ],
+                ]
             ],
+
         ];
     }
 
+    public function registerSettings()
+    {
+        return [
+            'shopconfig' => [
+                'label'       => '系统设置',
+                'description' => '这里是一些系统全局配置项',
+                'category'    => 'SHOP',
+                'icon'        => 'icon-cogs',
+                'class'       => 'Yangzie\Shop\Models\Settings',
+                'order'       => 1,
+                'keywords'    => 'shop setting',
+                'permissions' => ['yangzie.shop.shopSettings']
+            ]
+        ];
+    }
 }

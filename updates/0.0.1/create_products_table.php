@@ -8,7 +8,7 @@ class CreateProductsTable extends Migration
 {
     public function up()
     {
-        Schema::create('yangzie_shop_products', function(Blueprint $table) {
+        Schema::create('ya_products', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->timestamps();
@@ -17,6 +17,6 @@ class CreateProductsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('yangzie_shop_products');
+        Schema::dropIfExists('ya_products');
     }
 }

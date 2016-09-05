@@ -11,7 +11,7 @@ class Product extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'yangzie_shop_products';
+    public $table = 'ya_products';
 
     /**
      * @var array Guarded fields
