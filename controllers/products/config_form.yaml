@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Product
+
+# Model Form Field configuration
+form: $/yangzie/shop/models/product/fields.yaml
+
+# Model Class name
+modelClass: Yangzie\Shop\Models\Product
+
+# Default redirect location
+defaultRedirect: yangzie/shop/products
+
+# Create page
+create:
+    title: Create Product
+    redirect: yangzie/shop/products/update/:id
+    redirectClose: yangzie/shop/products
+
+# Update page
+update:
+    title: Edit Product
+    redirect: yangzie/shop/products
+    redirectClose: yangzie/shop/products
+
+# Preview page
+preview:
+    title: Preview Product
